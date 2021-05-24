@@ -21,11 +21,39 @@ open_file = open('Cupcakeinvoices.csv')
     
 # Loop through all the data, and print out the total for all invoices combined.
 
-total = 0
+# total = 0
+
+# for line in open_file:
+#     numbers = line.split(',')
+#     line_total = float(numbers[3]) * float(numbers[4])
+#     total += line_total
+    
+# print(total)
+
+#  Further
+chocolate = 0
+vanilla = 0
+strawberry = 0
 
 for line in open_file:
-    numbers = line.split(',')
-    line_total = float(numbers[3]) * float(numbers[4])
-    total += line_total
-    
-print(total)
+    value = line.split(',')
+    line_total = float(value[3]) * float(value[4])
+    if value[2] == 'Chocolate':
+        chocolate += line_total
+    elif value[2] == 'Vanilla':
+        vanilla += line_total
+    elif value[2] == 'Strawberry':
+        strawberry += line_total
+
+print(chocolate)
+print(vanilla)
+print(strawberry)
+
+
+# import matplotlib.pyplot as plt
+# import numpy as np
+
+# y = np.array([35, 25, 25, 15])
+
+# plt.pie(y)
+# plt.show() 
